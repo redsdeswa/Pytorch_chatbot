@@ -15,7 +15,7 @@ tags = []
 xy = []
 for intent in intents['intents']:
     tag = intent['tag']
-    tags.append(tag)
+    tags.append(tag)https://github.com/redsdeswa/Pytorch_chatbot/security
     for pattern in intent['patterns']:
         w = tokenize(pattern)
         all_words.extend(w)
@@ -90,5 +90,7 @@ for epoch in range(num_epoch):
     if (epoch+1) % 100 == 0:
         print(f'epoch {epoch+1}/{num_epoch}, loss={loss.item():.4f}')
 
+labels = label.long()
+Y_train = torch.tensor(Y_train, dtype=torch.long)
 print(Y_train.dtype)
 #print('final loss, loss={loss.item{}:.4f}')
